@@ -4,5 +4,51 @@ author: "Mark James Thompson"
 date: "`r Sys.Date()`"
 output: pdf_document
 ---
+This is a quick introductory exercise to publish a reproducible Rmarkdown document to github.
+
+# Artificial Sample Generation of X
+
+```{r log_normal_distribution, }
+#Create an HTML/PDF document that samples 100 values from a log-normal distribution 
+# (say, mu=1, sigma=.25); 
+X <- rlnorm(100, meanlog = 1, sdlog = .25)
+```
+\clearpage
+# Visual Output of the Artificial Random Variable
+```{r hist, error=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+# Create a histogram of the distribution 
+library(ggplot2)
+qplot(X,
+      geom="histogram",
+      main = "Histogram for the Artificial Sample", 
+      xlab = "Value of X",  
+      ylab = "Count",
+      fill=I("blue"), 
+      col=I("red"), 
+      alpha=I(.1)
+      )
+```
+```{r hist_ln, error=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+qplot(X,
+      geom="histogram",
+      main = "Histogram for the Artificial Sample", 
+      xlab = "Value of X (logged scale)",  
+      ylab = "Count",
+      fill=I("blue"), 
+      col=I("red"), 
+      alpha=I(.1)
+      ) + 
+  scale_x_continuous(trans='log')
+
+```
+
+
+
+<!-- mean and var --> 
+# Incorporating Reproducible Results into the Text
+```{r,  } 
+# report the mean and variance of the sample in line in the text.
+```
+The mean of the artificial sample is `r mean(X)`; and the variance of the sample is `r var(X)`.
 
 
