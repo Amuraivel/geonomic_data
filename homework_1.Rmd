@@ -1,0 +1,8 @@
+---
+title: "Homework 1 (part 2)"
+author: "Mark James Thompson"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+

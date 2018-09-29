@@ -1,0 +1,1 @@
+This is Mark James Thompson's repository for STA 426 Statistical Analysis of High- Throughput Genomic and Transcriptomic Data 
